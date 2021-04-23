@@ -24,7 +24,6 @@ const getContacts = id => state =>
   state.contacts.items.find(contact => contact.id === id);
 
 const ContactItem = ({ id }) => {
-  console.log(id);
   const { name, number } = useSelector(getContacts(id));
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
@@ -39,7 +38,7 @@ const ContactItem = ({ id }) => {
 };
 
 ContactItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ContactItem;
